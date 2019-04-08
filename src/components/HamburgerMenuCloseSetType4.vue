@@ -11,9 +11,9 @@
 <script>
 export default {
   name: 'HamburgerMenuCloseSetType4',
-  data() {
+  data () {
     return {
-      isOpen: false,
+      isOpen: false
     }
   }
 }
@@ -35,80 +35,80 @@ $hoverUseFilter: false;
 $hoverFilter : 0.5;
 
 button {
-	padding: $paddingY $paddingX;
-	display: inline-block;
-	cursor: pointer;
-	transition-property: opacity, filter;
-	transition-duration: $hoverTransitionDuration;
-	transition-timing-function: $hoverTransitionTimingFunction;
-	overflow: visible;
-	overflow: hidden;
-	&:hover {
-		@if $hoverUseFilter == true {
-			filter: $hoverFilter;
-		}
-		@else {
-			opacity: $hoverOpacity;
-		}
-	}
-	.box {
-		width: $lineWidth;
-		height: $lineHeight * 3 + $lineSpacing * 2;
-		display: inline-block;
-		position: relative;
-	}
-	.item {
-		display: block;
-		top: 50%;
-		margin-top: $lineHeight / -2;
-		transition: background-color 0.125s 0.175s ease-in;
-		&,
-		&:after,
-		&:before {
-			width: $lineWidth;
-			height: $lineHeight;
-			background-color: $lineColor;
-			border-radius: $lineBorderRadius;
-			position: absolute;
-			transition-property: transform;
-			transition-duration: 0.15s;
-			transition-timing-function: ease;
-		}
-		&:after,
-		&:before {
-			content: "";
-			display: block;
-		}
-		&:before {
-			top: ($lineSpacing + $lineHeight) * -1;
-			left: 0;
-			transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
-		}
-		&:after {
-			bottom: ($lineSpacing + $lineHeight) * -1;
-			top: ($lineHeight) + ($lineSpacing);
-			right: 0;
-			transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
-		}
-	}
-	&.open {
-		.item {
-			transition-delay: 0s;
-			transition-timing-function: ease-out;
-			background-color: transparent;
-			&:before {
-				left: $lineWidth * -2;
-				top: $lineWidth * -2;
-				transform: translate3d($lineWidth * 2, $lineWidth * 2, 0) rotate(45deg);
-				transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-			}
-			&:after {
-				right: $lineWidth * -2;
-				top: $lineWidth * -2;
-				transform: translate3d($lineWidth * -2, $lineWidth * 2, 0) rotate(-45deg);
-				transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-			}
-		}
-	}
+  padding: $paddingY $paddingX;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: $hoverTransitionDuration;
+  transition-timing-function: $hoverTransitionTimingFunction;
+  overflow: visible;
+  overflow: hidden;
+  &:hover {
+    @if $hoverUseFilter == true {
+      filter: $hoverFilter;
+    }
+    @else {
+      opacity: $hoverOpacity;
+    }
+  }
+  .box {
+    width: $lineWidth;
+    height: $lineHeight * 3 + $lineSpacing * 2;
+    display: inline-block;
+    position: relative;
+  }
+  .item {
+    display: block;
+    top: 50%;
+    margin-top: $lineHeight / -2;
+    transition: background-color 0.125s 0.175s ease-in;
+    &,
+    &:after,
+    &:before {
+      width: $lineWidth;
+      height: $lineHeight;
+      background-color: $lineColor;
+      border-radius: $lineBorderRadius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+    }
+    &:before {
+      top: ($lineSpacing + $lineHeight) * -1;
+      left: 0;
+      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+    }
+    &:after {
+      bottom: ($lineSpacing + $lineHeight) * -1;
+      top: ($lineHeight) + ($lineSpacing);
+      right: 0;
+      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+    }
+  }
+  &.open {
+    .item {
+      transition-delay: 0s;
+      transition-timing-function: ease-out;
+      background-color: transparent;
+      &:before {
+        left: $lineWidth * -2;
+        top: $lineWidth * -2;
+        transform: translate3d($lineWidth * 2, $lineWidth * 2, 0) rotate(45deg);
+        transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      &:after {
+        right: $lineWidth * -2;
+        top: $lineWidth * -2;
+        transform: translate3d($lineWidth * -2, $lineWidth * 2, 0) rotate(-45deg);
+        transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+  }
 }
 </style>

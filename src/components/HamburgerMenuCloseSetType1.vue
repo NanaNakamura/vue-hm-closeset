@@ -11,9 +11,9 @@
 <script>
 export default {
   name: 'HamburgerMenuCloseSetType1',
-  data() {
+  data () {
     return {
-      isOpen: false,
+      isOpen: false
     }
   }
 }
@@ -35,71 +35,71 @@ $hoverUseFilter: false;
 $hoverFilter : 0.5;
 
 button {
-	padding: $paddingY $paddingX;
-	display: inline-block;
-	cursor: pointer;
-	transition-property: opacity, filter;
-	transition-duration: $hoverTransitionDuration;
-	transition-timing-function: $hoverTransitionTimingFunction;
-	overflow: visible;
-	&:hover {
-		@if $hoverUseFilter == true {
-			filter: $hoverFilter;
-		}
-		@else {
-			opacity: $hoverOpacity;
-		}
-	}
-	.box {
-		width: $lineWidth;
-		height: $lineHeight * 3 + $lineSpacing * 2;
-		display: inline-block;
-		position: relative;
-	}
-	.item {
-		display: block;
-		top: $lineHeight / 2;
-		margin-top: $lineHeight / -2;
-		&,
-		&:after,
-		&:before {
-			width: $lineWidth;
-			height: $lineHeight;
-			background-color: $lineColor;
-			border-radius: $lineBorderRadius;
-			position: absolute;
-			transition-property: transform;
-			transition-duration: 0.15s;
-			transition-timing-function: ease;
-		}
-		&:after,
-		&:before {
-			content: "";
-			display: block;
-		}
-		&:before {
-			top: $lineHeight + $lineSpacing;
-			transition-property: transform, opacity;
-			transition-timing-function: ease;
-			transition-duration: 0.15s;
-		}
-		&:after {
-			top: ($lineHeight * 2) + ($lineSpacing * 2);
-			bottom: ($lineSpacing + $lineHeight) * -1;
-		}
-	}
-	&.open {
-		.item {
-			$y-offset: $lineSpacing + $lineHeight;
-			transform: translate3d(0, $y-offset, 0) rotate(45deg);
-			&:before {
-				transform: rotate(-45deg) translate3d($lineWidth / -7, $lineSpacing * -1, 0);
-				opacity: 0;
-			}
-			&:after {
-				transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
-			}
-		}
-	}
+  padding: $paddingY $paddingX;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: $hoverTransitionDuration;
+  transition-timing-function: $hoverTransitionTimingFunction;
+  overflow: visible;
+  &:hover {
+    @if $hoverUseFilter == true {
+      filter: $hoverFilter;
+    }
+    @else {
+      opacity: $hoverOpacity;
+    }
+  }
+  .box {
+    width: $lineWidth;
+    height: $lineHeight * 3 + $lineSpacing * 2;
+    display: inline-block;
+    position: relative;
+  }
+  .item {
+    display: block;
+    top: $lineHeight / 2;
+    margin-top: $lineHeight / -2;
+    &,
+    &:after,
+    &:before {
+      width: $lineWidth;
+      height: $lineHeight;
+      background-color: $lineColor;
+      border-radius: $lineBorderRadius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+    }
+    &:before {
+      top: $lineHeight + $lineSpacing;
+      transition-property: transform, opacity;
+      transition-timing-function: ease;
+      transition-duration: 0.15s;
+    }
+    &:after {
+      top: ($lineHeight * 2) + ($lineSpacing * 2);
+      bottom: ($lineSpacing + $lineHeight) * -1;
+    }
+  }
+  &.open {
+    .item {
+      $y-offset: $lineSpacing + $lineHeight;
+      transform: translate3d(0, $y-offset, 0) rotate(45deg);
+      &:before {
+        transform: rotate(-45deg) translate3d($lineWidth / -7, $lineSpacing * -1, 0);
+        opacity: 0;
+      }
+      &:after {
+        transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
+      }
+    }
+  }
 }
 </style>
