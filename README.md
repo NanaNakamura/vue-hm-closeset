@@ -1,8 +1,8 @@
 # vue-hm-closeset
 
-> A Vue.js project
+🍔ハンバーガーメニュー🍔  
+とりあえず、8種類  
 
-## DEMO
 <a href="https://nananakamura.github.io/c/vue-hm-closese/index.html" target="_blank">Demo</a>
 
 
