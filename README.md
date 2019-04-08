@@ -6,6 +6,27 @@
 🍔<a href="https://nananakamura.github.io/c/vue-hm-closese/index.html" target="_blank">Demo</a>
 
 
+## Usage
+
+### type 1の場合
+#### HTML
+```
+<template>
+	<HamburgerMenuCloseSetType1></HamburgerMenuCloseSetType1>
+</template>
+```
+
+#### scripts
+```
+import HamburgerMenuCloseSetType1 from "HamburgerMenuCloseSetType1.vue";
+
+export default {
+  components: {
+    HamburgerMenuCloseSetType1
+  }
+}
+```
+
 ## Build Setup
 
 ``` bash
