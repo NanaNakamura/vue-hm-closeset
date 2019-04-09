@@ -28,6 +28,8 @@ $lineHeight: 4px;
 $lineSpacing: 8px;
 $lineColor: #000;
 $lineBorderRadius: 2px;
+$moveTransitionDuration: 0.4s;
+
 $hoverOpacity: 0.7;
 $hoverTransitionDuration: 0.8s;
 $hoverTransitionTimingFunction: linear;
@@ -70,7 +72,7 @@ button {
       border-radius: $lineBorderRadius;
       position: absolute;
       transition-property: transform;
-      transition-duration: 0.15s;
+      transition-duration: $moveTransitionDuration;
       transition-timing-function: ease;
     }
     &:after,
@@ -87,15 +89,15 @@ button {
   }
   .item {
     top: $lineHeight / 2;
-    transition-duration: 0.275s;
+    transition-duration: $moveTransitionDuration;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     &:before {
       top: $lineHeight + $lineSpacing;
-      transition: opacity 0.125s 0.275s ease;
+      transition: opacity 0.125s $moveTransitionDuration ease;
     }
     &:after {
       top: ($lineHeight * 2) + ($lineSpacing * 2);
-      transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: transform $moveTransitionDuration cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
   }
   &.open {

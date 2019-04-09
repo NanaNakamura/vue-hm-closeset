@@ -28,6 +28,8 @@ $lineHeight: 4px;
 $lineSpacing: 8px;
 $lineColor: #000;
 $lineBorderRadius: 2px;
+$moveTransitionDuration: 0.2s;
+
 $hoverOpacity: 0.7;
 $hoverTransitionDuration: 0.8s;
 $hoverTransitionTimingFunction: linear;
@@ -60,7 +62,7 @@ button {
     display: block;
     top: 50%;
     margin-top: $lineHeight / -2;
-    transition-duration: 0.2s;
+    transition-duration: $moveTransitionDuration;
     transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     &,
     &:after,
@@ -71,7 +73,7 @@ button {
       border-radius: $lineBorderRadius;
       position: absolute;
       transition-property: transform;
-      transition-duration: 0.15s;
+      transition-duration: $moveTransitionDuration;
       transition-timing-function: ease;
     }
     &:after,

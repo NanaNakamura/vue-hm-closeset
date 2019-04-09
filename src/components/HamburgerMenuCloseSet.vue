@@ -79,7 +79,7 @@ export default {
     margin-bottom: 80px;
   }
   section {
-    width: 20%;
+    width: 25%;
     margin-bottom: 80px;
   }
 }

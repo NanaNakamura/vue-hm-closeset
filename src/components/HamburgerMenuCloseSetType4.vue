@@ -28,6 +28,8 @@ $lineHeight: 4px;
 $lineSpacing: 8px;
 $lineColor: #000;
 $lineBorderRadius: 2px;
+$moveTransitionDuration: 0.125s;
+
 $hoverOpacity: 0.7;
 $hoverTransitionDuration: 0.8s;
 $hoverTransitionTimingFunction: linear;
@@ -61,7 +63,7 @@ button {
     display: block;
     top: 50%;
     margin-top: $lineHeight / -2;
-    transition: background-color 0.125s 0.175s ease-in;
+    transition: background-color $moveTransitionDuration 0.175s ease-in;
     &,
     &:after,
     &:before {
@@ -71,7 +73,7 @@ button {
       border-radius: $lineBorderRadius;
       position: absolute;
       transition-property: transform;
-      transition-duration: 0.15s;
+      transition-duration: $moveTransitionDuration;
       transition-timing-function: ease;
     }
     &:after,
@@ -82,13 +84,13 @@ button {
     &:before {
       top: ($lineSpacing + $lineHeight) * -1;
       left: 0;
-      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+      transition: transform $moveTransitionDuration cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s $moveTransitionDuration linear, left $moveTransitionDuration 0.175s ease-in;
     }
     &:after {
       bottom: ($lineSpacing + $lineHeight) * -1;
       top: ($lineHeight) + ($lineSpacing);
       right: 0;
-      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+      transition: transform $moveTransitionDuration cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s $moveTransitionDuration linear, right $moveTransitionDuration 0.175s ease-in;
     }
   }
   &.open {
@@ -100,13 +102,13 @@ button {
         left: $lineWidth * -2;
         top: $lineWidth * -2;
         transform: translate3d($lineWidth * 2, $lineWidth * 2, 0) rotate(45deg);
-        transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: left $moveTransitionDuration ease-out, top 0.05s $moveTransitionDuration linear, transform $moveTransitionDuration 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
       &:after {
         right: $lineWidth * -2;
         top: $lineWidth * -2;
         transform: translate3d($lineWidth * -2, $lineWidth * 2, 0) rotate(-45deg);
-        transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: right $moveTransitionDuration ease-out, top 0.05s $moveTransitionDuration linear, transform $moveTransitionDuration 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
   }

@@ -19,7 +19,7 @@
 #### scripts
 
 .vueファイルコンポーネントフォルダーにコピペして、  
-↑のHTMLを書いたテンプレのjsに追記。  
+componentsに追加？
 
 ```
 import HamburgerMenuCloseSetType1 from "HamburgerMenuCloseSetType1.vue";

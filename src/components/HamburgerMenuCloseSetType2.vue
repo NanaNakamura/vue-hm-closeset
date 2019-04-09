@@ -28,6 +28,8 @@ $lineHeight: 4px;
 $lineSpacing: 8px;
 $lineColor: #000;
 $lineBorderRadius: 2px;
+$moveTransitionDuration: 0.2s;
+
 $hoverOpacity: 0.7;
 $hoverTransitionDuration: 0.8s;
 $hoverTransitionTimingFunction: linear;
@@ -69,7 +71,8 @@ button {
       border-radius: $lineBorderRadius;
       position: absolute;
       transition-property: transform;
-      transition-duration: 0.075s;
+      transition-duration: $moveTransitionDuration;
+      // transition-duration: 0.075s;
       transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
     &:after,
@@ -79,11 +82,11 @@ button {
     }
     &:before {
       top: ($lineSpacing + $lineHeight) * -1;
-      transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+      transition: top $moveTransitionDuration 0.12s ease, opacity $moveTransitionDuration ease;
     }
     &:after {
       bottom: ($lineSpacing + $lineHeight) * -1;
-      transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: bottom $moveTransitionDuration 0.12s ease, transform $moveTransitionDuration cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
   &.open {
@@ -94,12 +97,12 @@ button {
       &:before {
         top: 0;
         opacity: 0;
-        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+        transition: top $moveTransitionDuration ease, opacity $moveTransitionDuration 0.12s ease;
       }
       &:after {
         bottom: 0;
         transform: rotate(-90deg);
-        transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom $moveTransitionDuration ease, transform $moveTransitionDuration 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
