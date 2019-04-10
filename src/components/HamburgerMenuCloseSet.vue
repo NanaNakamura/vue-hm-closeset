@@ -77,6 +77,13 @@ export default {
   h1 {
     width: 100%;
     margin-bottom: 80px;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
   }
   section {
     width: 25%;
